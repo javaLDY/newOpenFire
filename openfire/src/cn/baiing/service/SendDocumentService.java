@@ -13,12 +13,8 @@ import org.jivesoftware.smackx.filetransfer.OutgoingFileTransfer;
 public class SendDocumentService extends Base{
 
 	public static void main(String[] args) {
-		ConnectionConfiguration domain = new ConnectionConfiguration(
-				"localhost", 5222);
-		domain.setReconnectionAllowed(true);
-		domain.setSendPresence(true);
 		
-		XMPPConnection conn = getConnection(domain);
+		XMPPConnection conn = getConnection();
 		
 		try {
 			conn.login("ldy", "123456", "Spark");

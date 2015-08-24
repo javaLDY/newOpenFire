@@ -13,16 +13,11 @@ import org.jivesoftware.smack.packet.Message;
 public class SendMessageService extends Base{
 
 	public static void main(String[] args) {
-		ConnectionConfiguration domain = new ConnectionConfiguration(
-				"localhost", 5222);
-		domain.setReconnectionAllowed(true);
-		domain.setSendPresence(true);
-		
-		XMPPConnection conn = getConnection(domain);
+		XMPPConnection conn = getConnection();
 		try {
 			conn.login("admin", "admin");
 			ChatManager chatManager = conn.getChatManager();
-			Chat newChat = chatManager.createChat("ldy@ldy-pc", new MessageListener() {
+			Chat newChat = chatManager.createChat("ivan@ldy-pc", new MessageListener() {
 				
 				public void processMessage(Chat chat, Message message) {
 					if(message.getBody() != null){

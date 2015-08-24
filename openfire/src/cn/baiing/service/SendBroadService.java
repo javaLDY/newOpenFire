@@ -8,11 +8,7 @@ import org.jivesoftware.smack.packet.Message;
 public class SendBroadService extends Base{
 
 	public static void main(String[] args) {
-		ConnectionConfiguration domain = new ConnectionConfiguration(
-				"localhost", 5222);
-			domain.setReconnectionAllowed(true);//保持自动连接
-			domain.setSendPresence(true);//保持自动连接
-			XMPPConnection conn = getConnection(domain);
+			XMPPConnection conn = getConnection();
 			try {
 				conn.login("admin", "admin");
 				Message message = new Message();
